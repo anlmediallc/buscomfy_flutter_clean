@@ -4,11 +4,11 @@ apply plugin: 'kotlin-android'
 apply plugin: 'dev.flutter.flutter-gradle-plugin'
 
 android {
-    namespace 'com.example.buscomfy_app'
+    namespace 'com.example.buscomfyapp'
     compileSdkVersion 34
 
     defaultConfig {
-        applicationId "com.example.buscomfy_app"
+        applicationId "com.example.buscomfyapp"
         minSdkVersion 21
         targetSdkVersion 34
         versionCode 1

@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.buscomfyapp">
     <application
-        android:label="buscomfy_app"
+        android:label="buscomfy"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

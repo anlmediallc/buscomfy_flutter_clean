@@ -1,22 +1,12 @@
-workflows:
-  build-android:
-    name: Build Debug APK
+  build-ios:
+    name: Build iOS
     environment:
       flutter: stable
+      xcode: latest
     scripts:
-      - name: Get dependencies
-        script: |
-          flutter pub get
-
-      - name: Build APK (with verbose output)
-        script: |
-          flutter build apk --debug -v
-
-      - name: Locate APK files (debug step)
-        script: |
-          echo "Searching for APK files..."
-          find . -name "*.apk"
-
+      - name: Install dependencies
+        script: flutter pub get
+      - name: Build iOS
+        script: flutter build ios --release --no-codesign
     artifacts:
-      - '**/app-debug.apk'
-      - '**/*.apk'
+      - build/ios/iphoneos/*.app

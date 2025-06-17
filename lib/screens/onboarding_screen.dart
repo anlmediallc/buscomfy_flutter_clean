@@ -6,18 +6,18 @@ class OnboardingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Onboarding')),
+      appBar: AppBar(title: const Text('Onboarding')),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('Onboarding Screen', style: TextStyle(fontSize: 24)),
-            SizedBox(height: 20),
+            const Text('Onboarding Screen', style: TextStyle(fontSize: 24)),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
                 Navigator.pushReplacementNamed(context, '/login');
               },
-              child: Text('Go to Login'),
+              child: const Text('Go to Login'),
             ),
           ],
         ),

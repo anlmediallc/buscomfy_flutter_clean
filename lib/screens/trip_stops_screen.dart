@@ -55,7 +55,7 @@ class TripStopsScreen extends StatelessWidget {
         child: SafeArea(
           child: Center(
             child: Container(
-              constraints: BoxConstraints(maxWidth: 448),
+              constraints: const BoxConstraints(maxWidth: 448),
               height: 650,
               child: Stack(
                 children: [
@@ -65,7 +65,7 @@ class TripStopsScreen extends StatelessWidget {
                       _buildHeader(context),
                       Expanded(
                         child: SingleChildScrollView(
-                          padding: EdgeInsets.only(bottom: 80),
+                          padding: const EdgeInsets.only(bottom: 80),
                           child: Column(
                             children: [
                               _buildCompanySection(),
@@ -100,18 +100,18 @@ class TripStopsScreen extends StatelessWidget {
 
   Widget _buildStatusBar() {
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         gradient: LinearGradient(
           colors: [Color(0xFFF7960F), Color(0xFFFF8C00)],
           begin: Alignment.centerLeft,
           end: Alignment.centerRight,
         ),
       ),
-      padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(
+          const Text(
             '9:41',
             style: TextStyle(
               color: Colors.white,
@@ -139,8 +139,8 @@ class TripStopsScreen extends StatelessWidget {
                   );
                 }),
               ),
-              Icon(Icons.wifi, color: Colors.white, size: 16),
-              SizedBox(width: 4),
+              const Icon(Icons.wifi, color: Colors.white, size: 16),
+              const SizedBox(width: 4),
               Container(
                 width: 24,
                 height: 12,
@@ -169,25 +169,25 @@ class TripStopsScreen extends StatelessWidget {
 
   Widget _buildHeader(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         gradient: LinearGradient(
           colors: [Color(0xFFF7960F), Color(0xFFFF8C00)],
           begin: Alignment.centerLeft,
           end: Alignment.centerRight,
         ),
       ),
-      padding: EdgeInsets.all(16),
+      padding: const EdgeInsets.all(16),
       child: Row(
         children: [
           GestureDetector(
             onTap: () => Navigator.pop(context),
-            child: Padding(
+            child: const Padding(
               padding: EdgeInsets.all(4),
               child: Icon(Icons.arrow_back, color: Colors.white, size: 24),
             ),
           ),
-          SizedBox(width: 16),
-          Text(
+          const SizedBox(width: 16),
+          const Text(
             'Trip Details',
             style: TextStyle(
               color: Colors.white,
@@ -204,8 +204,8 @@ class TripStopsScreen extends StatelessWidget {
 
   Widget _buildCompanySection() {
     return Container(
-      padding: EdgeInsets.all(16),
-      decoration: BoxDecoration(
+      padding: const EdgeInsets.all(16),
+      decoration: const BoxDecoration(
         color: Colors.white,
         border: Border(bottom: BorderSide(color: Color(0xFFF3F4F6), width: 1)),
       ),
@@ -221,7 +221,7 @@ class TripStopsScreen extends StatelessWidget {
                   color: Colors.black,
                   borderRadius: BorderRadius.circular(8),
                 ),
-                child: Center(
+                child: const Center(
                   child: Text(
                     'MSS',
                     style: TextStyle(
@@ -233,8 +233,8 @@ class TripStopsScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(width: 12),
-              Text(
+              const SizedBox(width: 12),
+              const Text(
                 'MSS transport',
                 style: TextStyle(
                   color: Color(0xFF111827),
@@ -246,12 +246,12 @@ class TripStopsScreen extends StatelessWidget {
             ],
           ),
           Container(
-            padding: EdgeInsets.all(6),
+            padding: const EdgeInsets.all(6),
             decoration: BoxDecoration(
-              color: Color(0xFF1F2937),
+              color: const Color(0xFF1F2937),
               borderRadius: BorderRadius.circular(20),
             ),
-            child: Icon(Icons.open_in_new, color: Colors.white, size: 12),
+            child: const Icon(Icons.open_in_new, color: Colors.white, size: 12),
           ),
         ],
       ),
@@ -260,11 +260,11 @@ class TripStopsScreen extends StatelessWidget {
 
   Widget _buildStopsTimeline() {
     return Container(
-      padding: EdgeInsets.all(16),
+      padding: const EdgeInsets.all(16),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
+          const Text(
             'Route Timeline',
             style: TextStyle(
               color: Color(0xFF111827),
@@ -273,7 +273,7 @@ class TripStopsScreen extends StatelessWidget {
               fontFamily: 'Inter',
             ),
           ),
-          SizedBox(height: 16),
+          const SizedBox(height: 16),
           ...stops.asMap().entries.map((entry) {
             int index = entry.key;
             Map<String, dynamic> stop = entry.value;
@@ -289,12 +289,12 @@ class TripStopsScreen extends StatelessWidget {
     Color getStatusColor(String status) {
       switch (status) {
         case 'completed':
-          return Color(0xFF10B981);
+          return const Color(0xFF10B981);
         case 'current':
-          return Color(0xFFF97316);
+          return const Color(0xFFF97316);
         case 'upcoming':
         default:
-          return Color(0xFFE5E7EB);
+          return const Color(0xFFE5E7EB);
       }
     }
 
@@ -321,7 +321,7 @@ class TripStopsScreen extends StatelessWidget {
               children: [
                 Text(
                   stop['time'],
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Color(0xFF111827),
                     fontSize: 16,
                     fontWeight: FontWeight.w600,
@@ -330,7 +330,7 @@ class TripStopsScreen extends StatelessWidget {
                 ),
                 Text(
                   stop['period'],
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Color(0xFF6B7280),
                     fontSize: 12,
                     fontWeight: FontWeight.w400,
@@ -340,7 +340,7 @@ class TripStopsScreen extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(width: 16),
+          const SizedBox(width: 16),
           Column(
             children: [
               Container(
@@ -362,30 +362,30 @@ class TripStopsScreen extends StatelessWidget {
                 Container(
                   width: 2,
                   height: 40,
-                  margin: EdgeInsets.symmetric(vertical: 8),
-                  decoration: BoxDecoration(color: Color(0xFFE5E7EB)),
+                  margin: const EdgeInsets.symmetric(vertical: 8),
+                  decoration: const BoxDecoration(color: Color(0xFFE5E7EB)),
                 ),
             ],
           ),
-          SizedBox(width: 16),
+          const SizedBox(width: 16),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   stop['location'],
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Color(0xFF111827),
                     fontSize: 16,
                     fontWeight: FontWeight.w600,
                     fontFamily: 'Inter',
                   ),
                 ),
-                SizedBox(height: 4),
+                const SizedBox(height: 4),
                 if (stop['duration'] != null)
                   Text(
                     'Stop duration: ${stop['duration']}',
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: Color(0xFF6B7280),
                       fontSize: 12,
                       fontWeight: FontWeight.w400,
@@ -393,7 +393,7 @@ class TripStopsScreen extends StatelessWidget {
                     ),
                   ),
                 if (stop['type'] == 'departure')
-                  Text(
+                  const Text(
                     'Departure point',
                     style: TextStyle(
                       color: Color(0xFF10B981),
@@ -403,7 +403,7 @@ class TripStopsScreen extends StatelessWidget {
                     ),
                   ),
                 if (stop['type'] == 'arrival')
-                  Text(
+                  const Text(
                     'Final destination',
                     style: TextStyle(
                       color: Color(0xFF10B981),
@@ -414,13 +414,14 @@ class TripStopsScreen extends StatelessWidget {
                   ),
                 if (stop['status'] == 'current')
                   Container(
-                    margin: EdgeInsets.only(top: 4),
-                    padding: EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                    margin: const EdgeInsets.only(top: 4),
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
                     decoration: BoxDecoration(
-                      color: Color(0xFFF97316).withOpacity(0.1),
+                      color: const Color(0xFFF97316).withOpacity(0.1),
                       borderRadius: BorderRadius.circular(12),
                     ),
-                    child: Text(
+                    child: const Text(
                       'Current location',
                       style: TextStyle(
                         color: Color(0xFFF97316),

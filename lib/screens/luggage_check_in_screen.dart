@@ -77,7 +77,8 @@ class _LuggageCheckInScreenState extends State<LuggageCheckInScreen> {
                           onTap: () => Navigator.pop(context),
                           child: const Padding(
                             padding: EdgeInsets.all(4),
-                            child: Icon(Icons.arrow_back, color: Colors.white, size: 24),
+                            child: Icon(Icons.arrow_back,
+                                color: Colors.white, size: 24),
                           ),
                         ),
                         const SizedBox(width: 33),
@@ -116,7 +117,8 @@ class _LuggageCheckInScreenState extends State<LuggageCheckInScreen> {
                                   onTap: () => Navigator.pop(context),
                                   child: const Padding(
                                     padding: EdgeInsets.all(4),
-                                    child: Icon(Icons.arrow_back, color: Color(0xFF020817), size: 24),
+                                    child: Icon(Icons.arrow_back,
+                                        color: Color(0xFF020817), size: 24),
                                   ),
                                 ),
                                 const SizedBox(width: 37),
@@ -159,11 +161,26 @@ class _LuggageCheckInScreenState extends State<LuggageCheckInScreen> {
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    _buildDropdown('Luggage Type', _selectedLuggageType, _luggageTypes, (v) => setState(() => _selectedLuggageType = v!)),
+                                    _buildDropdown(
+                                        'Luggage Type',
+                                        _selectedLuggageType,
+                                        _luggageTypes,
+                                        (v) => setState(
+                                            () => _selectedLuggageType = v!)),
                                     const SizedBox(height: 20),
-                                    _buildDropdown('Weight Category', _selectedWeight, _weightOptions, (v) => setState(() => _selectedWeight = v!)),
+                                    _buildDropdown(
+                                        'Weight Category',
+                                        _selectedWeight,
+                                        _weightOptions,
+                                        (v) => setState(
+                                            () => _selectedWeight = v!)),
                                     const SizedBox(height: 20),
-                                    _buildDropdown('Priority Level', _selectedPriority, _priorityOptions, (v) => setState(() => _selectedPriority = v!)),
+                                    _buildDropdown(
+                                        'Priority Level',
+                                        _selectedPriority,
+                                        _priorityOptions,
+                                        (v) => setState(
+                                            () => _selectedPriority = v!)),
                                     const SizedBox(height: 24),
                                     Container(
                                       padding: const EdgeInsets.all(12),
@@ -171,9 +188,11 @@ class _LuggageCheckInScreenState extends State<LuggageCheckInScreen> {
                                         color: const Color(0xFFF3F4F6),
                                         borderRadius: BorderRadius.circular(8),
                                       ),
-                                      child: Row(
-                                        children: const [
-                                          Icon(Icons.info_outline, color: Color(0xFF6B7280), size: 20),
+                                      child: const Row(
+                                        children: [
+                                          Icon(Icons.info_outline,
+                                              color: Color(0xFF6B7280),
+                                              size: 20),
                                           SizedBox(width: 8),
                                           Expanded(
                                             child: Text(
@@ -209,7 +228,8 @@ class _LuggageCheckInScreenState extends State<LuggageCheckInScreen> {
     );
   }
 
-  Widget _buildDropdown(String label, String value, List<String> items, ValueChanged<String?> onChanged) {
+  Widget _buildDropdown(String label, String value, List<String> items,
+      ValueChanged<String?> onChanged) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -226,13 +246,23 @@ class _LuggageCheckInScreenState extends State<LuggageCheckInScreen> {
         DropdownButtonFormField<String>(
           value: value,
           decoration: InputDecoration(
-            border: OutlineInputBorder(borderRadius: BorderRadius.circular(12), borderSide: const BorderSide(color: Color(0xFFD1D5DB))),
-            enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(12), borderSide: const BorderSide(color: Color(0xFFD1D5DB))),
-            focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(12), borderSide: const BorderSide(color: Color(0xFFF97316))),
-            contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+            border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(12),
+                borderSide: const BorderSide(color: Color(0xFFD1D5DB))),
+            enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(12),
+                borderSide: const BorderSide(color: Color(0xFFD1D5DB))),
+            focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(12),
+                borderSide: const BorderSide(color: Color(0xFFF97316))),
+            contentPadding:
+                const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
           ),
-          style: const TextStyle(color: Color(0xFF020817), fontSize: 14, height: 1.43),
-          items: items.map((e) => DropdownMenuItem(value: e, child: Text(e))).toList(),
+          style: const TextStyle(
+              color: Color(0xFF020817), fontSize: 14, height: 1.43),
+          items: items
+              .map((e) => DropdownMenuItem(value: e, child: Text(e)))
+              .toList(),
           onChanged: onChanged,
         ),
       ],
@@ -248,18 +278,27 @@ class _LuggageCheckInScreenState extends State<LuggageCheckInScreen> {
         style: ElevatedButton.styleFrom(
           backgroundColor: Colors.transparent,
           shadowColor: Colors.transparent,
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
           padding: EdgeInsets.zero,
         ),
         child: Ink(
           decoration: BoxDecoration(
-            gradient: const LinearGradient(colors: [Color(0xFFF7960F), Color(0xFFFF8C00)], begin: Alignment.centerLeft, end: Alignment.centerRight),
+            gradient: const LinearGradient(
+                colors: [Color(0xFFF7960F), Color(0xFFFF8C00)],
+                begin: Alignment.centerLeft,
+                end: Alignment.centerRight),
             borderRadius: BorderRadius.circular(12),
           ),
           child: Center(
             child: _isLoading
-                ? const CircularProgressIndicator(color: Colors.white, strokeWidth: 2)
-                : const Text('Check-In Luggage', style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.w500)),
+                ? const CircularProgressIndicator(
+                    color: Colors.white, strokeWidth: 2)
+                : const Text('Check-In Luggage',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500)),
           ),
         ),
       ),
@@ -273,11 +312,14 @@ class _LuggageCheckInScreenState extends State<LuggageCheckInScreen> {
         setState(() => _isLoading = false);
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
-            content: Text('Luggage checked in successfully! Check your email for confirmation.', style: TextStyle(color: Colors.white)),
+            content: Text(
+                'Luggage checked in successfully! Check your email for confirmation.',
+                style: TextStyle(color: Colors.white)),
             backgroundColor: Color(0xFF10B981),
           ),
         );
-        Future.delayed(const Duration(seconds: 2), () => Navigator.pop(context));
+        Future.delayed(
+            const Duration(seconds: 2), () => Navigator.pop(context));
       });
     }
   }

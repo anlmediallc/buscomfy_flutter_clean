@@ -14,7 +14,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 60,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         color: Colors.white,
         border: Border(top: BorderSide(color: Color(0xFFF3F4F6), width: 1)),
       ),
@@ -59,22 +59,25 @@ class CustomBottomNavigationBar extends StatelessWidget {
     return GestureDetector(
       onTap: () => onNavItemTap(route),
       child: Container(
-        padding: EdgeInsets.symmetric(vertical: 8, horizontal: 12),
+        padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 12),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             Icon(
               icon,
               size: 24,
-              color: isActive ? Color(0xFFF97316) : Color(0xFF9CA3AF),
+              color:
+                  isActive ? const Color(0xFFF97316) : const Color(0xFF9CA3AF),
             ),
-            SizedBox(height: 2),
+            const SizedBox(height: 2),
             Text(
               label,
               style: TextStyle(
                 fontSize: 10,
                 fontWeight: FontWeight.w500,
-                color: isActive ? Color(0xFFF97316) : Color(0xFF9CA3AF),
+                color: isActive
+                    ? const Color(0xFFF97316)
+                    : const Color(0xFF9CA3AF),
               ),
             ),
           ],

@@ -67,12 +67,14 @@ class NotificationCenterScreen extends StatelessWidget {
                               onTap: () => Navigator.pop(context),
                               child: Container(
                                 padding: const EdgeInsets.all(4),
-                                child: Row(
+                                child: const Row(
                                   mainAxisSize: MainAxisSize.min,
-                                  children: const [
-                                    Icon(Icons.arrow_back_ios, color: Colors.white, size: 20),
+                                  children: [
+                                    Icon(Icons.arrow_back_ios,
+                                        color: Colors.white, size: 20),
                                     SizedBox(width: 4),
-                                    Icon(Icons.notifications, color: Colors.white, size: 20),
+                                    Icon(Icons.notifications,
+                                        color: Colors.white, size: 20),
                                   ],
                                 ),
                               ),
@@ -105,9 +107,11 @@ class NotificationCenterScreen extends StatelessWidget {
                             children: [
                               Expanded(
                                 child: SingleChildScrollView(
-                                  padding: const EdgeInsets.fromLTRB(16, 16, 16, 96),
+                                  padding:
+                                      const EdgeInsets.fromLTRB(16, 16, 16, 96),
                                   child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       // Today section
                                       const Text(
@@ -119,7 +123,9 @@ class NotificationCenterScreen extends StatelessWidget {
                                         ),
                                       ),
                                       const SizedBox(height: 8),
-                                      ...notifications.take(2).map(_buildNotificationItem),
+                                      ...notifications
+                                          .take(2)
+                                          .map(_buildNotificationItem),
 
                                       const SizedBox(height: 24),
 
@@ -133,7 +139,9 @@ class NotificationCenterScreen extends StatelessWidget {
                                         ),
                                       ),
                                       const SizedBox(height: 8),
-                                      ...notifications.skip(2).map(_buildNotificationItem),
+                                      ...notifications
+                                          .skip(2)
+                                          .map(_buildNotificationItem),
                                     ],
                                   ),
                                 ),
@@ -189,7 +197,8 @@ class NotificationCenterScreen extends StatelessWidget {
                     color: const Color(0xFFE5E7EB),
                     borderRadius: BorderRadius.circular(16),
                   ),
-                  child: Icon(notification['icon'], color: const Color(0xFF4B5563), size: 16),
+                  child: Icon(notification['icon'],
+                      color: const Color(0xFF4B5563), size: 16),
                 ),
                 const SizedBox(width: 12),
                 // Notification content

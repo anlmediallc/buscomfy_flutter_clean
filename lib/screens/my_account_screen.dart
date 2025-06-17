@@ -6,7 +6,8 @@ class MyAccountScreen extends StatelessWidget {
   final Map<String, String> userInfo = const {
     'name': 'Dinesh VG',
     'phone': '7598113129',
-    'avatar': 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face',
+    'avatar':
+        'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face',
   };
 
   const MyAccountScreen({super.key});
@@ -161,25 +162,29 @@ class MyAccountScreen extends StatelessWidget {
                                 context,
                                 icon: Icons.person_outline,
                                 title: 'Personal Info',
-                                onTap: () => Navigator.pushNamed(context, '/personal-info'),
+                                onTap: () => Navigator.pushNamed(
+                                    context, '/personal-info'),
                               ),
                               _buildMenuItem(
                                 context,
                                 icon: Icons.lock_outline,
                                 title: 'Change Password',
-                                onTap: () => Navigator.pushNamed(context, '/forgot-password'),
+                                onTap: () => Navigator.pushNamed(
+                                    context, '/forgot-password'),
                               ),
                               _buildMenuItem(
                                 context,
                                 icon: Icons.notifications_outlined,
                                 title: 'Notification Preferences',
-                                onTap: () => Navigator.pushNamed(context, '/notifications'),
+                                onTap: () => Navigator.pushNamed(
+                                    context, '/notifications'),
                               ),
                               _buildMenuItem(
                                 context,
                                 icon: Icons.privacy_tip_outlined,
                                 title: 'Privacy Settings',
-                                onTap: () => Navigator.pushNamed(context, '/help-center'),
+                                onTap: () => Navigator.pushNamed(
+                                    context, '/help-center'),
                               ),
                               _buildMenuItem(
                                 context,
@@ -196,11 +201,14 @@ class MyAccountScreen extends StatelessWidget {
                   ),
                   // Bottom Navigation
                   Positioned(
-                    bottom: 0, left: 0, right: 0,
+                    bottom: 0,
+                    left: 0,
+                    right: 0,
                     child: CustomBottomNavigationBar(
                       currentRoute: '/my-account',
                       onNavItemTap: (route) {
-                        if (route != '/my-account') Navigator.pushReplacementNamed(context, route);
+                        if (route != '/my-account')
+                          Navigator.pushReplacementNamed(context, route);
                       },
                     ),
                   ),
@@ -227,13 +235,19 @@ class MyAccountScreen extends StatelessWidget {
         borderRadius: BorderRadius.circular(8),
         child: Row(
           children: [
-            Icon(icon, color: isDestructive ? Color(0xFFDC2626) : Color(0xFF4B5563), size: 20),
+            Icon(icon,
+                color: isDestructive
+                    ? const Color(0xFFDC2626)
+                    : const Color(0xFF4B5563),
+                size: 20),
             const SizedBox(width: 12),
             Expanded(
               child: Text(
                 title,
                 style: TextStyle(
-                  color: isDestructive ? Color(0xFFDC2626) : Color(0xFF111827),
+                  color: isDestructive
+                      ? const Color(0xFFDC2626)
+                      : const Color(0xFF111827),
                   fontSize: 16,
                   fontWeight: FontWeight.w500,
                 ),
@@ -255,14 +269,17 @@ class MyAccountScreen extends StatelessWidget {
         actions: [
           TextButton(
             onPressed: () => Navigator.of(context).pop(),
-            child: const Text('Cancel', style: TextStyle(color: Color(0xFF6B7280))),
+            child: const Text('Cancel',
+                style: TextStyle(color: Color(0xFF6B7280))),
           ),
           TextButton(
             onPressed: () {
               Navigator.of(context).pop();
-              Navigator.pushNamedAndRemoveUntil(context, '/login', (route) => false);
+              Navigator.pushNamedAndRemoveUntil(
+                  context, '/login', (route) => false);
             },
-            child: const Text('Logout', style: TextStyle(color: Color(0xFFDC2626))),
+            child: const Text('Logout',
+                style: TextStyle(color: Color(0xFFDC2626))),
           ),
         ],
       ),

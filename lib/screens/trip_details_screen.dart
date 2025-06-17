@@ -10,7 +10,7 @@ class TripDetailsScreen extends StatelessWidget {
       body: SafeArea(
         child: Center(
           child: Container(
-            constraints: BoxConstraints(maxWidth: 448),
+            constraints: const BoxConstraints(maxWidth: 448),
             height: 650,
             color: Colors.white,
             child: Stack(
@@ -68,7 +68,10 @@ class TripDetailsScreen extends StatelessWidget {
           children: [
             const Text(
               '9:41',
-              style: TextStyle(color: Colors.white, fontSize: 14, fontWeight: FontWeight.w500),
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 14,
+                  fontWeight: FontWeight.w500),
             ),
             Row(
               children: [
@@ -80,7 +83,9 @@ class TripDetailsScreen extends StatelessWidget {
                         width: 4,
                         height: 12,
                         decoration: BoxDecoration(
-                          color: index < 3 ? Colors.white : Colors.white.withOpacity(0.7),
+                          color: index < 3
+                              ? Colors.white
+                              : Colors.white.withOpacity(0.7),
                           borderRadius: BorderRadius.circular(2),
                         ),
                       ),
@@ -93,7 +98,9 @@ class TripDetailsScreen extends StatelessWidget {
                 Container(
                   width: 24,
                   height: 12,
-                  decoration: BoxDecoration(border: Border.all(color: Colors.white), borderRadius: BorderRadius.circular(4)),
+                  decoration: BoxDecoration(
+                      border: Border.all(color: Colors.white),
+                      borderRadius: BorderRadius.circular(4)),
                 ),
               ],
             ),
@@ -112,9 +119,16 @@ class TripDetailsScreen extends StatelessWidget {
         padding: const EdgeInsets.all(16),
         child: Row(
           children: [
-            GestureDetector(onTap: () => Navigator.pop(context), child: const Icon(Icons.arrow_back, color: Colors.white, size: 24)),
+            GestureDetector(
+                onTap: () => Navigator.pop(context),
+                child: const Icon(Icons.arrow_back,
+                    color: Colors.white, size: 24)),
             const SizedBox(width: 16),
-            const Text('Trip Details', style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.w600)),
+            const Text('Trip Details',
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                    fontWeight: FontWeight.w600)),
           ],
         ),
       );
@@ -123,7 +137,8 @@ class TripDetailsScreen extends StatelessWidget {
         padding: const EdgeInsets.all(16),
         decoration: const BoxDecoration(
           color: Colors.white,
-          border: Border(bottom: BorderSide(color: Color(0xFFF3F4F6), width: 1)),
+          border:
+              Border(bottom: BorderSide(color: Color(0xFFF3F4F6), width: 1)),
         ),
         child: Column(
           children: [
@@ -135,17 +150,31 @@ class TripDetailsScreen extends StatelessWidget {
                     Container(
                       width: 40,
                       height: 40,
-                      decoration: BoxDecoration(color: Colors.black, borderRadius: BorderRadius.circular(8)),
-                      child: const Center(child: Text('MSS', style: TextStyle(color: Colors.white, fontSize: 12, fontWeight: FontWeight.w400))),
+                      decoration: BoxDecoration(
+                          color: Colors.black,
+                          borderRadius: BorderRadius.circular(8)),
+                      child: const Center(
+                          child: Text('MSS',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w400))),
                     ),
                     const SizedBox(width: 12),
-                    const Text('MSS transport', style: TextStyle(color: Color(0xFF111827), fontSize: 16, fontWeight: FontWeight.w600)),
+                    const Text('MSS transport',
+                        style: TextStyle(
+                            color: Color(0xFF111827),
+                            fontSize: 16,
+                            fontWeight: FontWeight.w600)),
                   ],
                 ),
                 Container(
                   padding: const EdgeInsets.all(6),
-                  decoration: BoxDecoration(color: const Color(0xFF1F2937), borderRadius: BorderRadius.circular(20)),
-                  child: const Icon(Icons.open_in_new, color: Colors.white, size: 12),
+                  decoration: BoxDecoration(
+                      color: const Color(0xFF1F2937),
+                      borderRadius: BorderRadius.circular(20)),
+                  child: const Icon(Icons.open_in_new,
+                      color: Colors.white, size: 12),
                 ),
               ],
             ),
@@ -164,26 +193,47 @@ class TripDetailsScreen extends StatelessWidget {
 
   Widget _buildTimeInfo(String time, String period, String city) => Column(
         children: [
-          Text(time, style: const TextStyle(color: Color(0xFF111827), fontSize: 24, fontWeight: FontWeight.w600)),
-          Text(period, style: const TextStyle(color: Color(0xFF6B7280), fontSize: 12, fontWeight: FontWeight.w400)),
+          Text(time,
+              style: const TextStyle(
+                  color: Color(0xFF111827),
+                  fontSize: 24,
+                  fontWeight: FontWeight.w600)),
+          Text(period,
+              style: const TextStyle(
+                  color: Color(0xFF6B7280),
+                  fontSize: 12,
+                  fontWeight: FontWeight.w400)),
           const SizedBox(height: 4),
-          Text(city, style: const TextStyle(color: Color(0xFF374151), fontSize: 14, fontWeight: FontWeight.w500)),
+          Text(city,
+              style: const TextStyle(
+                  color: Color(0xFF374151),
+                  fontSize: 14,
+                  fontWeight: FontWeight.w500)),
         ],
       );
 
   Widget _buildRouteTimeline() => Expanded(
         child: Container(
           margin: const EdgeInsets.symmetric(horizontal: 16),
-          child: Column(
+          child: const Column(
             children: [
-              const Text('5h 30m', style: TextStyle(color: Color(0xFF6B7280), fontSize: 12, fontWeight: FontWeight.w400)),
-              const Text('350km', style: TextStyle(color: Color(0xFF6B7280), fontSize: 12, fontWeight: FontWeight.w400)),
-              const SizedBox(height: 8),
+              Text('5h 30m',
+                  style: TextStyle(
+                      color: Color(0xFF6B7280),
+                      fontSize: 12,
+                      fontWeight: FontWeight.w400)),
+              Text('350km',
+                  style: TextStyle(
+                      color: Color(0xFF6B7280),
+                      fontSize: 12,
+                      fontWeight: FontWeight.w400)),
+              SizedBox(height: 8),
               Row(
                 children: [
-                  const CircleAvatar(backgroundColor: Color(0xFFF97316), radius: 4),
-                  const Expanded(child: Divider(thickness: 2, color: Color(0xFFE5E7EB))),
-                  const CircleAvatar(backgroundColor: Color(0xFFF97316), radius: 4),
+                  CircleAvatar(backgroundColor: Color(0xFFF97316), radius: 4),
+                  Expanded(
+                      child: Divider(thickness: 2, color: Color(0xFFE5E7EB))),
+                  CircleAvatar(backgroundColor: Color(0xFFF97316), radius: 4),
                 ],
               ),
             ],
@@ -195,13 +245,21 @@ class TripDetailsScreen extends StatelessWidget {
         padding: const EdgeInsets.all(16),
         child: Column(
           children: [
-            _buildInfoCard(icon: Icons.calendar_today, title: 'Travel Date', subtitle: 'Tomorrow, March 15, 2024'),
+            _buildInfoCard(
+                icon: Icons.calendar_today,
+                title: 'Travel Date',
+                subtitle: 'Tomorrow, March 15, 2024'),
             const SizedBox(height: 12),
-            _buildInfoCard(icon: Icons.person, title: 'Passenger', subtitle: '1 Adult'),
+            _buildInfoCard(
+                icon: Icons.person, title: 'Passenger', subtitle: '1 Adult'),
             const SizedBox(height: 12),
-            _buildInfoCard(icon: Icons.event_seat, title: 'Seat Number', subtitle: 'A12'),
+            _buildInfoCard(
+                icon: Icons.event_seat, title: 'Seat Number', subtitle: 'A12'),
             const SizedBox(height: 12),
-            _buildInfoCard(icon: Icons.confirmation_number, title: 'Ticket ID', subtitle: 'BF123456789'),
+            _buildInfoCard(
+                icon: Icons.confirmation_number,
+                title: 'Ticket ID',
+                subtitle: 'BF123456789'),
           ],
         ),
       );
@@ -217,9 +275,14 @@ class TripDetailsScreen extends StatelessWidget {
                 onPressed: () => Navigator.pushNamed(context, '/trip-stops'),
                 style: OutlinedButton.styleFrom(
                   side: const BorderSide(color: Color(0xFFF97316)),
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12)),
                 ),
-                child: const Text('View Stops', style: TextStyle(color: Color(0xFFF97316), fontSize: 16, fontWeight: FontWeight.w500)),
+                child: const Text('View Stops',
+                    style: TextStyle(
+                        color: Color(0xFFF97316),
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500)),
               ),
             ),
             const SizedBox(height: 12),
@@ -232,14 +295,23 @@ class TripDetailsScreen extends StatelessWidget {
                   backgroundColor: Colors.transparent,
                   shadowColor: Colors.transparent,
                   padding: EdgeInsets.zero,
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12)),
                 ),
                 child: Ink(
                   decoration: const BoxDecoration(
-                    gradient: LinearGradient(colors: [Color(0xFFF7960F), Color(0xFFFF8C00)], begin: Alignment.centerLeft, end: Alignment.centerRight),
+                    gradient: LinearGradient(
+                        colors: [Color(0xFFF7960F), Color(0xFFFF8C00)],
+                        begin: Alignment.centerLeft,
+                        end: Alignment.centerRight),
                     borderRadius: BorderRadius.all(Radius.circular(12)),
                   ),
-                  child: const Center(child: Text('Download Ticket', style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.w500))),
+                  child: const Center(
+                      child: Text('Download Ticket',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 16,
+                              fontWeight: FontWeight.w500))),
                 ),
               ),
             ),
@@ -247,29 +319,49 @@ class TripDetailsScreen extends StatelessWidget {
         ),
       );
 
-  Widget _buildInfoCard({required IconData icon, required String title, required String subtitle}) => Container(
+  Widget _buildInfoCard(
+          {required IconData icon,
+          required String title,
+          required String subtitle}) =>
+      Container(
         padding: const EdgeInsets.all(12),
-        decoration: BoxDecoration(color: const Color(0xFFF9FAFB), borderRadius: BorderRadius.circular(8), border: Border.all(color: const Color(0xFFE5E7EB))),
+        decoration: BoxDecoration(
+            color: const Color(0xFFF9FAFB),
+            borderRadius: BorderRadius.circular(8),
+            border: Border.all(color: const Color(0xFFE5E7EB))),
         child: Row(
           children: [
             Container(
               padding: const EdgeInsets.all(8),
-              decoration: BoxDecoration(color: const Color(0xFFF97316).withOpacity(0.1), borderRadius: BorderRadius.circular(6)),
+              decoration: BoxDecoration(
+                  color: const Color(0xFFF97316).withOpacity(0.1),
+                  borderRadius: BorderRadius.circular(6)),
               child: Icon(icon, color: const Color(0xFFF97316), size: 16),
             ),
             const SizedBox(width: 12),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(title, style: const TextStyle(color: Color(0xFF6B7280), fontSize: 12, fontWeight: FontWeight.w400)),
-                Text(subtitle, style: const TextStyle(color: Color(0xFF111827), fontSize: 14, fontWeight: FontWeight.w500)),
+                Text(title,
+                    style: const TextStyle(
+                        color: Color(0xFF6B7280),
+                        fontSize: 12,
+                        fontWeight: FontWeight.w400)),
+                Text(subtitle,
+                    style: const TextStyle(
+                        color: Color(0xFF111827),
+                        fontSize: 14,
+                        fontWeight: FontWeight.w500)),
               ],
             ),
           ],
         ),
       );
 
-  void _handleDownloadTicket(BuildContext context) => ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Ticket downloaded successfully!'), backgroundColor: Color(0xFF10B981)),
+  void _handleDownloadTicket(BuildContext context) =>
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+            content: Text('Ticket downloaded successfully!'),
+            backgroundColor: Color(0xFF10B981)),
       );
 }

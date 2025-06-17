@@ -14,4 +14,5 @@ workflows:
         script: |
           flutter build apk --debug
     artifacts:
-      - build/app/**/*.apk
+      - '**/app-debug.apk'
+      - '**/*.apk'

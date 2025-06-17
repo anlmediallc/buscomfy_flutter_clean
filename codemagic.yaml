@@ -3,16 +3,20 @@ workflows:
     name: Build Debug APK
     environment:
       flutter: stable
-      java: 17
-      vars:
-        JAVA_TOOL_OPTIONS: "-Xmx8192m"
     scripts:
       - name: Get dependencies
         script: |
           flutter pub get
-      - name: Build APK
+
+      - name: Build APK (with verbose output)
         script: |
-          flutter build apk --debug
+          flutter build apk --debug -v
+
+      - name: Locate APK files (debug step)
+        script: |
+          echo "Searching for APK files..."
+          find . -name "*.apk"
+
     artifacts:
       - '**/app-debug.apk'
       - '**/*.apk'
